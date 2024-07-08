@@ -29,7 +29,7 @@ public class ClientHandler {
                 	        showHandsOffHand = showHandItem(itemstack1, false);
                 	}
                 	else { //Otherwise, check by individual item IDs
-                	    Item item = BuiltInRegistries.ITEM.get(new ResourceLocation(entry));
+                	    Item item = BuiltInRegistries.ITEM.get(ResourceLocation.parse(entry));
                         if (item != null) {
                             showHandsMainHand = showHandItem(itemstack, item, true);
                             showHandsOffHand = showHandItem(itemstack1, item, false);

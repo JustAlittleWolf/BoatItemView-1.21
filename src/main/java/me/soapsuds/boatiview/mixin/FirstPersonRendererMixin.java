@@ -14,7 +14,7 @@ import net.minecraft.world.item.ItemStack;
 @Mixin(ItemInHandRenderer.class)
 public class FirstPersonRendererMixin {
 	
-	@Inject(method = "Lnet/minecraft/client/renderer/ItemInHandRenderer;tick()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;isHandsBusy()Z"), locals = LocalCapture.CAPTURE_FAILSOFT)
+	@Inject(method = "tick()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;isHandsBusy()Z"), locals = LocalCapture.CAPTURE_FAILSOFT)
 	public void modifyHandRender(CallbackInfo info, LocalPlayer clientplayerentity, ItemStack itemstack, ItemStack itemstack1) {
 		ClientHandler.modifyHandRender(clientplayerentity, itemstack, itemstack1);
 	}
